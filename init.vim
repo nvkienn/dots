@@ -22,3 +22,4 @@ set nobackup
 set undofile
 set undodir=$HOME/.config/nvim/undodir
 set noerrorbells
+inoremap jk <esc>

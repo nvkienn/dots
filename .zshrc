@@ -7,10 +7,6 @@ _P='\033[0;35m' # Purple
 _C='\033[0;36m' # Cyan
 _S='\033[1;37m' # Gray (Soft)
 
-compinit
-autoload -U colors
-colors
-
 function ed() {
 	case $1 in
 		'z')
@@ -31,7 +27,6 @@ alias r="exec $SHELL -l"
 setopt prompt_subst
 
 echo ":>"
-cd ~/documents
 
 function prompt_git() {
   local branch=$(git branch --show-current 2> /dev/null)
