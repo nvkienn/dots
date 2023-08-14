@@ -7,6 +7,7 @@ _P='\033[0;35m' # Purple
 _C='\033[0;36m' # Cyan
 _S='\033[1;37m' # Gray (Soft)
 
+
 function ed() {
 	case $1 in
 		'z')
@@ -19,9 +20,8 @@ function ed() {
 function hi() {
   echo 'hello there'
 }
-alias g="google-chrome-stable &"
 alias p="python3"
-alias w="cd ~/documents/infocomm/2022/wordle_pw"
+alias i="cd ~/Documents/infocomm/python2023"
 alias gitl="git log --oneline --graph"
 alias r="exec $SHELL -l"
 setopt prompt_subst
