@@ -17,13 +17,12 @@ function ed() {
 		*) echo "nothing happened.";;
 	esac
 }
-function hi() {
-  echo 'hello there'
-}
 alias p="python3"
-alias i="cd ~/Documents/infocomm/python2023"
+alias i="cd ~/Documents/pathways_python"
 alias gitl="git log --oneline --graph"
+alias doc="cd ~/Documents"
 alias r="exec $SHELL -l"
+alias vim="nvim"
 setopt prompt_subst
 
 echo ":>"
@@ -43,3 +42,4 @@ function prompt_git() {
 setopt prompt_subst
 PROMPT=$'%F{blue}%~ $(prompt_git)%f
 %(?.%F{green}> %f.%F{red}> %f)'
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"

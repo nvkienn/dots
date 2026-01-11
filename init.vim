@@ -3,6 +3,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'iamcco/markdown-preview.nvim'
 call plug#end()
 nnoremap <silent> <C-p> :lua require('telescope.builtin').find_files({cwd=vim.env.HOME..'/documents'})<CR>
 set termguicolors
