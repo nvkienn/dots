@@ -23,6 +23,8 @@ alias gitl="git log --oneline --graph"
 alias doc="cd ~/Documents"
 alias r="exec $SHELL -l"
 alias vim="nvim"
+alias vi="nvim"
+alias v="nvim"
 setopt prompt_subst
 
 echo ":>"
