@@ -45,3 +45,4 @@ setopt prompt_subst
 PROMPT=$'%F{blue}%~ $(prompt_git)%f
 %(?.%F{green}> %f.%F{red}> %f)'
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export MANPAGER="/bin/sh -c \"col -b | nvim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
