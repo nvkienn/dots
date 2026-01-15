@@ -13,7 +13,7 @@ function ed() {
 		'z')
 			nvim $HOME/.zshrc;;
 		'v')
-			nvim $HOME/.config/nvim/init.vim;;
+			nvim $HOME/.config/nvim/init.lua;;
 		*) echo "nothing happened.";;
 	esac
 }
