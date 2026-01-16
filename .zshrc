@@ -7,6 +7,7 @@ _P='\033[0;35m' # Purple
 _C='\033[0;36m' # Cyan
 _S='\033[1;37m' # Gray (Soft)
 
+echo ":>"
 
 function ed() {
 	case $1 in
@@ -18,7 +19,6 @@ function ed() {
 	esac
 }
 alias p="python3"
-alias i="cd ~/Documents/pathways_python"
 alias gitl="git log --oneline --graph"
 alias doc="cd ~/Documents"
 alias r="exec $SHELL -l"
@@ -26,8 +26,8 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 setopt prompt_subst
+unsetopt BEEP
 
-echo ":>"
 
 function prompt_git() {
   local branch=$(git branch --show-current 2> /dev/null)

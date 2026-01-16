@@ -1,3 +1,9 @@
+-- Bootstrap 'lazy.nvim' by Folke
+require("config.lazy")
+
+-- Colors
+vim.o.termguicolors = true
+
 -- Line wrapping
 vim.o.linebreak = true
 vim.o.breakindent = true
