@@ -1,6 +1,3 @@
--- Bootstrap 'lazy.nvim' by Folke
-require("config.lazy")
-
 -- Colors
 vim.o.termguicolors = true
 
@@ -35,3 +32,6 @@ vim.cmd('packadd! nohlsearch')
 -- Undofile
 vim.o.undofile = true
 vim.o.undodir = '/Users/ramen/.config/nvim/undodir'
+
+-- Bootstrap 'lazy.nvim' by Folke
+require("config.lazy")
