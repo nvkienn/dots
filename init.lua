@@ -1,3 +1,7 @@
+-- Leader
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 -- Colors
 vim.o.termguicolors = true
 
@@ -32,6 +36,17 @@ vim.cmd('packadd! nohlsearch')
 -- Undofile
 vim.o.undofile = true
 vim.o.undodir = '/Users/ramen/.config/nvim/undodir'
+
+-- Sync Vim clipboard with System clipboard
+vim.api.nvim_create_autocmd('UIEnter', {
+  callback = function()
+    vim.o.clipboard = 'unnamedplus'
+  end,
+})
+
+-- Mappings
+vim.keymap.set('n','H','^')
+vim.keymap.set('n','L','$')
 
 -- Bootstrap 'lazy.nvim' by Folke
 require("config.lazy")
