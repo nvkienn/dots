@@ -20,13 +20,20 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    {
-      "arcticicestudio/nord-vim",
-      priority = 1000,
-      config = function()
-        vim.cmd.colorscheme "nord"
-      end,
-    }
+    -- {
+    --   "arcticicestudio/nord-vim",
+    --   priority = 1000,
+    --   config = function()
+    --     vim.cmd.colorscheme "nord"
+    --   end,
+    -- }
+       {
+         "catppuccin/nvim",
+         priority = 1000,
+         config = function()
+           vim.cmd.colorscheme "catppucin"
+         end,
+       }
     -- import your plugins
     -- { import = "plugins" }, -- uncomment to have plugins under ../plugins/
   },

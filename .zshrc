@@ -19,7 +19,7 @@ function ed() {
 	esac
 }
 alias p="python3"
-alias gitl="git log --oneline --graph"
+alias gitl="git log --oneline --graph --all"
 alias doc="cd ~/Documents"
 alias r="exec $SHELL -l"
 alias vim="nvim"
@@ -44,5 +44,12 @@ function prompt_git() {
 setopt prompt_subst
 PROMPT=$'%F{blue}%~ $(prompt_git)%f
 %(?.%F{green}> %f.%F{red}> %f)'
+
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export MANPAGER="/bin/sh -c \"col -b | nvim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
+
+EZA_OPTS=(--all --group-directories-first --sort=Name --ignore-glob='.DS_Store')
+alias ls="eza --across $EZA_OPTS"
+alias lss="eza --tree --level=2 $EZA_OPTS"
+alias lsss="eza --tree --level=3 $EZA_OPTS"
+alias ll="eza -l"
