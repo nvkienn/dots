@@ -25,7 +25,9 @@ alias r="exec $SHELL -l"
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
-setopt prompt_subst
+alias su="cd ~/Documents/code/java/sudoku"
+alias 2c="cd ..;cd .."
+alias todo="nvim ~/Documents/todo.txt"
 unsetopt BEEP
 
 
