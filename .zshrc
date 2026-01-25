@@ -13,6 +13,10 @@ function ed() { case $1 in
 			nvim $HOME/.zshrc;;
 		'v')
 			nvim $HOME/.config/nvim/init.lua;;
+		'l')
+			nvim $HOME/.config/nvim/lua/config/lazy.lua;;
+		't')
+			nvim $HOME/.tmux.conf;;
 		*) echo "nothing happened.";;
 	esac
 }
