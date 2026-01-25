@@ -31,22 +31,22 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 
 -- Turn off search highlight after entering Insert mode
-vim.cmd('packadd! nohlsearch')
+vim.cmd("packadd! nohlsearch")
 
 -- Undofile
 vim.o.undofile = true
-vim.o.undodir = '/Users/ramen/.config/nvim/undodir'
+vim.o.undodir = "/Users/ramen/.config/nvim/undodir"
 
 -- Sync Vim clipboard with System clipboard
-vim.api.nvim_create_autocmd('UIEnter', {
-  callback = function()
-    vim.o.clipboard = 'unnamedplus'
-  end,
+vim.api.nvim_create_autocmd("UIEnter", {
+	callback = function()
+		vim.o.clipboard = "unnamedplus"
+	end,
 })
 
 -- Mappings
-vim.keymap.set('n','H','^')
-vim.keymap.set('n','L','$')
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
 
 -- Bootstrap 'lazy.nvim' by Folke
 require("config.lazy")
