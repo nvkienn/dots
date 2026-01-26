@@ -17,11 +17,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 -->
 
--- This is also a good place to setup other settings (vim.opt)
-
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
+
+		-- vim basic functions --
+		--<
 		"tpope/vim-surround",
 		"tpope/vim-repeat",
 
@@ -32,19 +33,33 @@ require("lazy").setup({
 				require("autoclose").setup()
 			end,
 		},
+		-->
 
 		-- formatter --
 		{
 			"stevearc/conform.nvim",
-			opts = {},
+			config = function()
+				require("conform").setup({
+					formatters_by_ft = {
+						lua = { "stylua" },
+						java = { "google-java-format" },
+					},
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						pattern = "*",
+						callback = function(args)
+							require("conform").format({ bufnr = args.buf })
+						end,
+					}),
+				})
+			end,
 		},
 
 		-- LSPs --
 		{
 			"saghen/blink.cmp",
 			dependencies = {
-				"rafamadriz/friendly-snippets",
 				"onsails/lspkind.nvim",
+				"nvim-mini/mini.icons",
 			},
 			version = "1.*",
 			opts = {
@@ -55,16 +70,28 @@ require("lazy").setup({
 					["<CR>"] = { "accept", "fallback" },
 				},
 				cmdline = { enabled = false },
-				menu = {
-					draw = {
-						columns = {
-							{ "label", "label_description", gap = 1 },
-							{ "kind_icon", "kind" },
+				fuzzy = { implementation = "prefer_rust_with_warning" },
+				completion = {
+					menu = {
+						draw = {
+							components = {
+								kind_icon = {
+									text = function()
+										return ""
+									end,
+								},
+							},
+						},
+					},
+					list = {
+						selection = {
+							preselect = false,
+							auto_insert = false,
 						},
 					},
 				},
 			},
-			fuzzy = { implementation = "prefer_rust_with_warning" },
+			opts_extend = { "sources.providers" },
 		},
 
 		-- mason.nvim --
@@ -83,7 +110,10 @@ require("lazy").setup({
 				"neovim/nvim-lspconfig",
 			},
 			opts = {
-				ensure_installed = {"jdtls"},
+				ensure_installed = {
+					"jdtls",
+					"lua_ls",
+				},
 				automatic_enable = {
 					exclude = {
 						-- needs external plugin
@@ -109,7 +139,6 @@ require("lazy").setup({
 						vim.keymap.set("n", "gr", vim.lsp.buf.references, x)
 						vim.keymap.set("n", "gi", vim.lsp.buf.implementation, x)
 						vim.keymap.set("n", "K", vim.lsp.buf.hover, x)
-						vim.o.signcolumn = "no"
 					end,
 				})
 				vim.lsp.enable("jdtls")
@@ -117,6 +146,7 @@ require("lazy").setup({
 		},
 
 		-- telescope.nvim --
+		--<
 		{
 			"nvim-telescope/telescope.nvim",
 			dependencies = {
@@ -139,6 +169,7 @@ require("lazy").setup({
 				})
 			end,
 		},
+		-->
 
 		-- colorscheme dump --
 		--<
@@ -164,7 +195,7 @@ require("lazy").setup({
 		-- import your plugins
 		-- { import = "plugins" }, -- uncomment to have plugins under ../plugins/
 	},
-	-- Configure any other settings here. See the documentation for more details.
+
 	-- colorscheme that will be used when installing plugins.
 	install = { colorscheme = { "habamax" } },
 	-- automatically check for plugin updates
