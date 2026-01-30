@@ -21,13 +21,17 @@ function ed() { case $1 in
 	esac
 }
 alias p="python3"
+alias j="java"
+alias jc="javac"
 alias gitl="git log --oneline --graph --all"
 alias doc="cd ~/Documents"
+alias dots="cd ~/dots"
 alias r="exec $SHELL -l"
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 alias su="cd ~/Documents/code/java/sudoku/src"
+alias c="cd ~/Documents/code"
 alias 2c="cd ..;cd .."
 alias todo="nvim ~/Documents/todo.txt"
 unsetopt BEEP
@@ -49,7 +53,7 @@ setopt prompt_subst
 PROMPT=$'%F{blue}%~ $(prompt_git)%f
 %(?.%F{green}> %f.%F{red}> %f)'
 
-#export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 export PATH="Useres/ramen/.local/share/nvim/mason/packages/jdtls:$PATH"
 export MANPAGER="/bin/sh -c \"col -b | nvim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""

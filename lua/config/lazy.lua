@@ -36,6 +36,7 @@ require("lazy").setup({
 		-->
 
 		-- formatter --
+		--<
 		{
 			"stevearc/conform.nvim",
 			config = function()
@@ -53,8 +54,12 @@ require("lazy").setup({
 				})
 			end,
 		},
+		-->
 
 		-- LSPs --
+		--<
+		-- blink.cmp --
+		--<
 		{
 			"saghen/blink.cmp",
 			dependencies = {
@@ -93,7 +98,10 @@ require("lazy").setup({
 			},
 			opts_extend = { "sources.providers" },
 		},
+		-->
 
+		-- Mason --
+		--<
 		-- mason.nvim --
 		{
 			"mason-org/mason.nvim",
@@ -122,8 +130,10 @@ require("lazy").setup({
 				},
 			},
 		},
+		-->
 
 		-- jdtls --
+		--<
 		{
 			"mfussenegger/nvim-jdtls",
 			config = function()
@@ -144,6 +154,8 @@ require("lazy").setup({
 				vim.lsp.enable("jdtls")
 			end,
 		},
+		-->
+		-->
 
 		-- telescope.nvim --
 		--<
@@ -163,6 +175,8 @@ require("lazy").setup({
 								["<esc>"] = actions.close,
 								["<M-n>"] = actions.move_selection_previous,
 								["<M-N>"] = actions.move_selection_next,
+								["<M-<>"] = actions.results_scrolling_left,
+								["<M->>"] = actions.results_scrolling_right,
 							},
 						},
 					},

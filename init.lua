@@ -4,6 +4,8 @@ vim.g.maplocalleader = "\\"
 
 -- Vim Generics
 --<
+-- Appearences --
+--<
 -- Colors
 vim.o.termguicolors = true
 vim.cmd([[colorscheme nord]])
@@ -18,13 +20,6 @@ vim.o.relativenumber = true
 vim.o.scrolloff = 15
 vim.o.signcolumn = "no"
 
--- Case-insensitive searching unless \c or one or more capital letters in the search term
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
--- Disables
-vim.o.swapfile = false
-
 -- Tab settings
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
@@ -32,17 +27,34 @@ vim.o.shiftwidth = 4
 -- Foldings
 vim.o.foldmethod = "marker"
 vim.o.foldmarker = "--<,-->"
+-->
 
--- Undofile
-vim.o.undofile = true
-vim.o.undodir = "/Users/ramen/.config/nvim/undodir"
+-- Vim-function --
+--<
+-- Case-insensitive searching unless \c or one or more capital letters in the search term
+--<
+vim.o.ignorecase = true
+vim.o.smartcase = true
+-->
 
 -- Sync Vim clipboard with System clipboard
+--<
 vim.api.nvim_create_autocmd("UIEnter", {
 	callback = function()
 		vim.o.clipboard = "unnamedplus"
 	end,
 })
+-->
+
+-- Close error messages
+--<
+vim.cmd([[
+  augroup errormsg
+    autocmd!
+    au CursorHold * echo
+  augroup END
+]])
+-->
 
 -- Turn off search highlight after entering Insert mode
 --<
@@ -56,20 +68,26 @@ vim.cmd([[
   augroup END
 ]])
 -->
+-->
 
--- Close error messages
-vim.cmd([[
-  augroup errormsg
-    autocmd!
-    au CursorHold * echo
-  augroup END
-]])
+-- Under The Hood Config --
+--<
+-- Disables
+vim.o.swapfile = false
+
+-- Undofile
+vim.o.undofile = true
+vim.o.undodir = "/Users/ramen/.config/nvim/undodir"
+-->
+-->
 
 -- Mappings
+--<
 vim.keymap.set("n", "H", "^")
 vim.keymap.set("n", "L", "$")
 vim.keymap.set("o", "H", "^")
 vim.keymap.set("o", "L", "$")
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 -->
 
 -- Bootstrap 'lazy.nvim' by Folke
@@ -91,6 +109,7 @@ local t = {
 		"%.jpeg",
 		"%.JPEG",
 		"%.gif",
+		"%.class",
 		"undodir/",
 		"Pictures/",
 		"Music/",
@@ -111,8 +130,8 @@ local files_programs = function()
 end
 
 local files_config = function()
-	t.prompt_title = "~/.config/"
-	t.cwd = "$HOME/.config/"
+	t.prompt_title = "~/dots/"
+	t.cwd = "$HOME/dots/"
 	builtin.find_files(t)
 end
 
@@ -123,9 +142,16 @@ local files_all = function()
 	builtin.find_files(t)
 end
 
+local files_cwd = function()
+	t.prompt_title = "cwd"
+	t.cwd = nil
+	builtin.find_files(t)
+end
+
 vim.keymap.set("n", "<leader>p", files_programs, { desc = "find code files" })
 vim.keymap.set("n", "<leader>c", files_config, { desc = "find .config files" })
-vim.keymap.set("n", "<leader>f", files_all, { desc = "find all files" })
+vim.keymap.set("n", "<leader>fh", files_all, { desc = "find all files" })
+vim.keymap.set("n", "<leader>ff", files_cwd, { desc = "find all files" })
 -->
 
 -- LSPs
