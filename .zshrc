@@ -34,6 +34,7 @@ alias su="cd ~/Documents/code/java/sudoku/src"
 alias c="cd ~/Documents/code"
 alias 2c="cd ..;cd .."
 alias todo="nvim ~/Documents/todo.txt"
+alias yeet="git push"
 unsetopt BEEP
 
 
