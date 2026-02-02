@@ -30,7 +30,11 @@ require("lazy").setup({
 		{
 			"m4xshen/autoclose.nvim",
 			config = function()
-				require("autoclose").setup()
+				require("autoclose").setup({
+					options = {
+						pair_spaces = true,
+					},
+				})
 			end,
 		},
 		-->
@@ -44,6 +48,11 @@ require("lazy").setup({
 					formatters_by_ft = {
 						lua = { "stylua" },
 						java = { "google-java-format" },
+					},
+					formatters = {
+						["google-java-format"] = {
+							prepend_args = { "--aosp" },
+						},
 					},
 					vim.api.nvim_create_autocmd("BufWritePre", {
 						pattern = "*",
