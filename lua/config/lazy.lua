@@ -90,8 +90,8 @@ require("lazy").setup({
 					},
 					list = {
 						selection = {
-							preselect = false,
-							auto_insert = false,
+							preselect = true,
+							auto_insert = true,
 						},
 					},
 				},

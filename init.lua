@@ -166,3 +166,14 @@ vim.lsp.config("lua_ls", {
 	},
 })
 -->
+
+-- Java Specific Config
+--<
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "java" },
+	callback = function()
+		vim.o.tabstop = 2
+		vim.o.shiftwidth = 2
+	end,
+})
+-->
