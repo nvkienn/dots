@@ -23,6 +23,7 @@ function ed() { case $1 in
 alias p="python3"
 alias j="java"
 alias jc="javac"
+alias gb="./gradlew build run"
 alias gitl="git log --oneline --graph --all"
 alias doc="cd ~/Documents"
 alias dots="cd ~/dots"
