@@ -31,6 +31,9 @@ require("lazy").setup({
 			"m4xshen/autoclose.nvim",
 			config = function()
 				require("autoclose").setup({
+					keys = {
+						[";"] = { escape = true },
+					},
 					options = {
 						pair_spaces = true,
 					},
