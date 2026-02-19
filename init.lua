@@ -87,6 +87,12 @@ vim.keymap.set("n", "H", "^")
 vim.keymap.set("n", "L", "$")
 vim.keymap.set("o", "H", "^")
 vim.keymap.set("o", "L", "$")
+vim.keymap.set("v", "H", "^")
+vim.keymap.set("v", "L", "$")
+vim.keymap.set("n", "<C-j>", "2j")
+vim.keymap.set("n", "<C-k>", "2k")
+vim.keymap.set("n", "<C-h>", "2h")
+vim.keymap.set("n", "<C-l>", "2l")
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 -->
 

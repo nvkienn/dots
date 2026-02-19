@@ -31,11 +31,13 @@ alias r="exec $SHELL -l"
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
-alias su="cd ~/Documents/code/java/sudoku/src"
+alias su="cd ~/Documents/code/java/sudoku/"
 alias c="cd ~/Documents/code"
 alias 2c="cd ..;cd .."
 alias todo="nvim ~/Documents/todo.txt"
 alias yeet="git push"
+alias rmG="rm Groups.java"
+alias vG="v Groups.java"
 unsetopt BEEP
 
 
