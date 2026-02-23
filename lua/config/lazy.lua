@@ -21,12 +21,11 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 
-		-- vim basic functions --
-		--<
+		-- vim basic functions --<
 		"tpope/vim-surround",
 		"tpope/vim-repeat",
 
-		-- autoclose.nvim --
+		-- autoclose.nvim --<
 		{
 			"m4xshen/autoclose.nvim",
 			config = function()
@@ -39,11 +38,10 @@ require("lazy").setup({
 					},
 				})
 			end,
-		},
+		}, -->
 		-->
 
-		-- formatter --
-		--<
+		-- formatter --<
 		{
 			"stevearc/conform.nvim",
 			config = function()
@@ -65,19 +63,12 @@ require("lazy").setup({
 					}),
 				})
 			end,
-		},
-		-->
+		}, -->
 
-		-- LSPs --
-		--<
-		-- blink.cmp --
-		--<
+		-- LSPs --<
+		-- blink.cmp --<
 		{
 			"saghen/blink.cmp",
-			dependencies = {
-				"onsails/lspkind.nvim",
-				"nvim-mini/mini.icons",
-			},
 			version = "1.*",
 			opts = {
 				keymap = {
@@ -86,6 +77,9 @@ require("lazy").setup({
 					["<M-N>"] = { "select_prev", "fallback" },
 					["<CR>"] = { "accept", "fallback" },
 				},
+				enabled = function()
+					return not vim.tbl_contains({ "markdown" }, vim.bo.filetype)
+				end,
 				cmdline = { enabled = false },
 				fuzzy = { implementation = "prefer_rust_with_warning" },
 				completion = {
@@ -112,8 +106,7 @@ require("lazy").setup({
 		},
 		-->
 
-		-- Mason --
-		--<
+		-- Mason --<
 		-- mason.nvim --
 		{
 			"mason-org/mason.nvim",
@@ -144,12 +137,12 @@ require("lazy").setup({
 		},
 		-->
 
-		-- jdtls --
-		--<
+		-- jdtls --<
 		{
 			"mfussenegger/nvim-jdtls",
 			config = function()
 				vim.lsp.config("jdtls", {
+					cmd = { "jdtls" },
 					on_attach = function(_, bufnr)
 						for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
 							vim.api.nvim_set_hl(0, group, {})
@@ -165,12 +158,21 @@ require("lazy").setup({
 				})
 				vim.lsp.enable("jdtls")
 			end,
-		},
-		-->
+		}, -->
 		-->
 
-		-- telescope.nvim --
-		--<
+		-- iamcco/markdown-preview.nvim --<
+		{
+			"iamcco/markdown-preview.nvim",
+			cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+			build = "cd app && yarn install",
+			init = function()
+				vim.g.mkdp_filetypes = { "markdown" }
+			end,
+			ft = { "markdown" },
+		}, -->
+
+		-- telescope.nvim --<
 		{
 			"nvim-telescope/telescope.nvim",
 			dependencies = {
@@ -194,11 +196,9 @@ require("lazy").setup({
 					},
 				})
 			end,
-		},
-		-->
+		}, -->
 
-		-- colorscheme dump --
-		--<
+		-- colorscheme dump --<
 		-- {
 		--   "arcticicestudio/nord-vim",
 		--   priority = 1000,
@@ -216,8 +216,7 @@ require("lazy").setup({
 		--     })
 		--     vim.cmd.colorscheme "catppuccin"
 		--   end,
-		-- }
-		-->
+		-- } -->
 		-- import your plugins
 		-- { import = "plugins" }, -- uncomment to have plugins under ../plugins/
 	},
