@@ -32,6 +32,7 @@ require("lazy").setup({
 				require("autoclose").setup({
 					keys = {
 						[";"] = { escape = true },
+						["`"] = { escape = false, close = false },
 					},
 					options = {
 						pair_spaces = true,
