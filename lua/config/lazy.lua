@@ -21,11 +21,12 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 
-		-- vim basic functions --<
+		--< vim basic functions
 		"tpope/vim-surround",
 		"tpope/vim-repeat",
+		"terrortylor/nvim-comment",
 
-		-- autoclose.nvim --<
+		--< autoclose.nvim
 		{
 			"m4xshen/autoclose.nvim",
 			config = function()
@@ -44,7 +45,7 @@ require("lazy").setup({
 		}, -->
 		-->
 
-		-- formatter --<
+		--< formatter
 		{
 			"stevearc/conform.nvim",
 			config = function()
@@ -68,8 +69,8 @@ require("lazy").setup({
 			end,
 		}, -->
 
-		-- LSPs --<
-		-- blink.cmp --<
+		--< LSPs
+		--< blink.cmp
 		{
 			"saghen/blink.cmp",
 			version = "1.*",
@@ -112,7 +113,7 @@ require("lazy").setup({
 		},
 		-->
 
-		-- Mason --<
+		--< Mason
 		-- mason.nvim --
 		{
 			"mason-org/mason.nvim",
@@ -143,7 +144,7 @@ require("lazy").setup({
 		},
 		-->
 
-		-- jdtls --<
+		--< jdtls
 		{
 			"mfussenegger/nvim-jdtls",
 			config = function()
@@ -167,7 +168,7 @@ require("lazy").setup({
 		}, -->
 		-->
 
-		-- iamcco/markdown-preview.nvim --<
+		--< iamcco/markdown-preview.nvim
 		{
 			"iamcco/markdown-preview.nvim",
 			cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -178,7 +179,7 @@ require("lazy").setup({
 			ft = { "markdown" },
 		}, -->
 
-		-- telescope.nvim --<
+		--< telescope.nvim
 		{
 			"nvim-telescope/telescope.nvim",
 			dependencies = {
@@ -204,7 +205,7 @@ require("lazy").setup({
 			end,
 		}, -->
 
-		-- colorscheme dump --<
+		--< colorscheme dump
 		-- {
 		--   "arcticicestudio/nord-vim",
 		--   priority = 1000,
