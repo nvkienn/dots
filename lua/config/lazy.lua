@@ -81,7 +81,6 @@ require("lazy").setup({
 				enabled = function()
 					return not vim.tbl_contains({ "markdown" }, vim.bo.filetype)
 				end,
-				cmdline = { enabled = false },
 				fuzzy = { implementation = "prefer_rust_with_warning" },
 				completion = {
 					menu = {
