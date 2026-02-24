@@ -33,9 +33,11 @@ require("lazy").setup({
 					keys = {
 						[";"] = { escape = true },
 						["`"] = { escape = false, close = false },
+						["'"] = { escape = true, close = false },
 					},
 					options = {
 						pair_spaces = true,
+						disable_when_touch = true,
 					},
 				})
 			end,
@@ -77,10 +79,14 @@ require("lazy").setup({
 					["<M-n>"] = { "select_next", "fallback" },
 					["<M-N>"] = { "select_prev", "fallback" },
 					["<CR>"] = { "accept", "fallback" },
+					["<Tab>"] = { "show", "fallback" },
 				},
 				enabled = function()
 					return not vim.tbl_contains({ "markdown" }, vim.bo.filetype)
 				end,
+				cmdline = {
+					keymap = { preset = "inherit" },
+				},
 				fuzzy = { implementation = "prefer_rust_with_warning" },
 				completion = {
 					menu = {
