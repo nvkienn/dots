@@ -43,6 +43,19 @@ require("lazy").setup({
 				})
 			end,
 		}, -->
+
+		--< nvim-toggler
+		{
+			"nguyenvukhang/nvim-toggler",
+			config = function()
+				require("nvim-toggler").setup({
+					inverses = {
+						["true"] = "false",
+					},
+					remove_default_inverses = true,
+				})
+			end,
+		}, -->
 		-->
 
 		--< formatter
