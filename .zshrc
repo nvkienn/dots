@@ -20,26 +20,31 @@ function ed() { case $1 in
 		*) echo "nothing happened.";;
 	esac
 }
+
 alias p="python3"
 alias j="java"
 alias jc="javac"
+alias jr="java -jar"
+alias g="./gradlew"
 alias gb="./gradlew build run"
-alias gitl="git log --oneline --graph --all"
-alias doc="cd ~/Documents"
-alias dots="cd ~/dots"
-alias r="exec $SHELL -l"
+
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
-alias su="cd ~/Documents/code/java/sudoku/"
+
+alias gitl="git log --oneline --graph --all"
+alias yeet="git push"
+
+alias doc="cd ~/Documents"
+alias dots="cd ~/dots"
 alias c="cd ~/Documents/code"
 alias 2c="cd ..;cd .."
 alias todo="nvim ~/Documents/todo.txt"
-alias yeet="git push"
-alias rmG="rm Groups.java"
-alias vG="v Groups.java"
-unsetopt BEEP
+alias su="cd ~/Documents/code/java/sudoku/"
 
+alias r="exec $SHELL -l"
+
+unsetopt BEEP
 
 function prompt_git() {
   local branch=$(git branch --show-current 2> /dev/null)
