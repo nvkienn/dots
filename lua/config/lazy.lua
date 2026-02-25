@@ -93,13 +93,15 @@ require("lazy").setup({
 					["<M-n>"] = { "select_next", "fallback" },
 					["<M-N>"] = { "select_prev", "fallback" },
 					["<CR>"] = { "accept", "fallback" },
-					["<Tab>"] = { "show", "fallback" },
 				},
 				enabled = function()
 					return not vim.tbl_contains({ "markdown" }, vim.bo.filetype)
 				end,
 				cmdline = {
-					keymap = { preset = "inherit" },
+					keymap = {
+						preset = "inherit",
+						["<Tab>"] = { "show", "fallback" },
+					},
 				},
 				fuzzy = { implementation = "prefer_rust_with_warning" },
 				completion = {
