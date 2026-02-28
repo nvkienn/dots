@@ -35,6 +35,7 @@ require("lazy").setup({
 						[";"] = { escape = true },
 						["`"] = { escape = false, close = false },
 						["'"] = { escape = true, close = false },
+						["<"] = { escape = false, close = true, pair = "<>", enabled_filetypes = { "html" } },
 					},
 					options = {
 						pair_spaces = true,
@@ -66,6 +67,7 @@ require("lazy").setup({
 					formatters_by_ft = {
 						lua = { "stylua" },
 						java = { "google-java-format" },
+						html = { "htmlbeautifier" },
 					},
 					formatters = {
 						["google-java-format"] = {

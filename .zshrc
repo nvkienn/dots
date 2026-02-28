@@ -37,7 +37,7 @@ alias yeet="git push"
 
 alias doc="cd ~/Documents"
 alias dots="cd ~/dots"
-alias c="cd ~/Documents/code"
+alias code="cd ~/Documents/code"
 alias 2c="cd ..;cd .."
 alias todo="nvim ~/Documents/todo.txt"
 alias su="cd ~/Documents/code/java/sudoku/"
