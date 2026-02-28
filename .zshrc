@@ -41,6 +41,7 @@ alias code="cd ~/Documents/code"
 alias 2c="cd ..;cd .."
 alias todo="nvim ~/Documents/todo.txt"
 alias su="cd ~/Documents/code/java/sudoku/"
+alias web="cd ~/Documents/code/nvkienn.github.io/"
 
 alias r="exec $SHELL -l"
 
