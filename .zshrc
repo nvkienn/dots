@@ -34,6 +34,9 @@ alias v="nvim"
 
 alias gitl="git log --oneline --graph --all"
 alias yeet="git push"
+alias gits="git status"
+alias gita="git add ."
+alias gitc="git commit -m"
 
 alias doc="cd ~/Documents"
 alias dots="cd ~/dots"
