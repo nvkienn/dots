@@ -52,6 +52,7 @@ require("lazy").setup({
 				require("nvim-toggler").setup({
 					inverses = {
 						["true"] = "false",
+						["True"] = "False",
 					},
 					remove_default_inverses = true,
 				})
