@@ -98,7 +98,7 @@ require("lazy").setup({
 					["<CR>"] = { "accept", "fallback" },
 				},
 				enabled = function()
-					return not vim.tbl_contains({ "markdown" }, vim.bo.filetype)
+					return not vim.tbl_contains({ "markdown", "text" }, vim.bo.filetype)
 				end,
 				cmdline = {
 					keymap = {
